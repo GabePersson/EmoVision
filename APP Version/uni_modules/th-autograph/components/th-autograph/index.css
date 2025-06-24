@@ -1,0 +1,227 @@
+.draw_tool_btn {
+	position: fixed;
+	height: 42px;
+	width: 42px;
+	z-index: 4;
+}
+
+.confirm_btn {
+	position: fixed;
+	height: 42px;
+	width: 96px;
+	z-index: 4
+}
+
+.head_toggle {
+	position: fixed;
+	background-image: url("/static/draw/head_toggle_background.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	/* 渐变背景 */
+	top: 20px;
+	width: 85%;
+	height: 60px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	z-index: 3
+}
+
+.head_toogle_icon {
+	width: 35px;
+	height: 35px;
+	margin: 25px;
+}
+
+.left_toggle {
+	position: fixed;
+	/* 渐变背景 */
+	top: 120px;
+	left: 10px;
+	height: 85%;
+	width: 180px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 3
+}
+
+.left_toggle_title {
+	position: fixed;
+	top: 100px;
+	background-image: url("/static/draw/title_background.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	width: 180px;
+	height: 100px;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.left_main_container {
+	background-image: url("/static/draw/left_toggle_background.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 30px;
+	width: 180px;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 3;
+}
+
+.left_top_tool {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.ref_img_container {
+	background-image: url("/static/draw/ref_img_wrapper.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	height: 200px;
+	width: 160px;
+	align-items: center;
+	justify-content: center;
+}
+
+.generate_img {
+	border-radius: 20px;
+	margin-top: 26px;
+	height: 144px;
+	width: 158px;
+}
+
+.re_and_put_group {
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 30px;
+
+}
+
+.regenerate_btn {
+	width: 90px;
+	height: 30px;
+	padding-right: 5px;
+}
+
+.put_btn {
+	width: 60px;
+	height: 30px;
+}
+
+.prompt_input_wrapper {
+	width: 160px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	border-radius: 20px;
+	/* 圆角 */
+	/* 边框阴影 */
+	margin: 10px auto;
+	margin-left: 15px;
+
+	background-image: url("/static/draw/input.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+
+.prompt_input {
+	padding-left: 10px;
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+.voice_icon {
+	width: 25px;
+	height: 30px;
+}
+
+.start_generate_btn {
+	height: 28px;
+	width: 128px;
+}
+
+.left_bottom_tool {
+	padding-left: 10px;
+	padding-top: 75px;
+	width: 180px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.logo {
+	width: 110px;
+	height: 24px;
+}
+
+.hide_left_btn {
+	margin-left: 35px;
+	width: 24px;
+	height: 24px;
+}
+
+.show_left_btn {
+	position: fixed;
+	left: 10px;
+	bottom: 40px;
+	width: 24px;
+	height: 24px;
+	z-index: 2;
+
+}
+
+.close_btn {
+	position: fixed;
+	top: 30px;
+	height: 40px;
+	width: 40px;
+	right: 5px;
+	z-index: 4;
+}
+
+.visible {
+	display: flex;
+}
+
+.hidden {
+	display: none;
+}
+
+.ref_layer {
+	position: fixed;
+	z-index: 1
+}
+
+.left_toggle_title_img {
+	height: 30px;
+	width: 60px;
+	padding-bottom: 40px;
+}
+
+.finetune_ref_width {
+	width: 160px;
+
+}
+
+.finetune_ref_height {
+	width: 160px;
+
+}

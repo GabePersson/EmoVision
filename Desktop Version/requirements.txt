@@ -1,0 +1,8 @@
+PyQt5~=5.15.11
+pillow~=10.4.0
+requests~=2.32.3
+erniebot~=0.5.9
+numpy~=2.1.1
+paddlenlp~=2.6.1
+opencv-python~=4.10.0.84
+pandas~=2.2.3

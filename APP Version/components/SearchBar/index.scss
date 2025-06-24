@@ -1,0 +1,34 @@
+.search-container {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #f0f3f7;
+    border-radius: 20px; /* 圆角 */
+    padding: 0 15px;
+	padding-top: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.1); /* 边框阴影 */
+    margin: 10px auto;
+	margin-left:8px;
+}
+
+.search-input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #b0b3c6; /* placeholder 颜色 */
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    tint-color: #7b9edb; /* 设置图标颜色 */
+}

@@ -1,0 +1,192 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	padding-top: 100px;
+}
+
+
+.main-container {
+	width: 100%;
+	min-height: 100vh;
+	flex-grow: 1;
+	background-color: white;
+	border-radius: 20px 20px 0 0;
+	padding: 15px 20px;
+	box-sizing: border-box;
+	margin-top: -20px;
+	z-index: 10;
+	align-items: center;
+	padding-bottom: 70px;
+	background-color: #FFFFFF;
+}
+
+.search-container {
+	padding-bottom: 10px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	row-gap: 30px;
+	flex-grow: 1;
+}
+
+.template-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* 加入合适的内边距来保证图片显示 */
+}
+
+.template-wrapper {
+	width: 160px;
+	height: 160px;
+	position: relative;
+	/* 设置相对定位，用于嵌套背景图 */
+	background-image: url('@/static/model_select/image_item.png');
+	/* 背景图 */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	/* 添加圆角 */
+	overflow: hidden;
+	/* 防止内容溢出 */
+	align-items: center;
+}
+
+.template-image {
+	width: 150px;
+	/* 根据需要调整大小 */
+	height: 140px;
+	padding-top: 3px;
+	padding-left: 5px;
+	/* 图片居中 */
+	z-index: 2;
+	/* 确保图片在背景图上方 */
+	border-radius: 25px 20px 13px 20px;
+}
+
+.template-name {
+	font-size: 14px;
+	color: #333;
+	text-align: center;
+}
+
+.show-full-image {
+	margin-top: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	z-index: 3;
+	position: absolute;
+	margin-top: 110px;
+	margin-right: -100px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	/* 固定在屏幕底部 */
+	left: 0;
+	width: 100%;
+	/* 占满屏幕宽度 */
+	display: flex;
+	/* 使用 flex 布局 */
+	justify-content: space-between;
+	/* 内容两端对齐 */
+	align-items: center;
+	/* 垂直居中 */
+	padding: 10px 15px;
+	/* 内边距适当调整 */
+	z-index: 1000;
+	/* 保证不被其他元素遮挡 */
+	border-radius: 20px 20px 0 0;
+	/* 顶部圆角 */
+	background-image: url(/static/model_select/footer.png);
+	/* 背景图片 */
+	background-repeat: no-repeat;
+	background-position: center;
+	/* 背景图适配容器 */
+	overflow: hidden;
+	/* 确保圆角裁切生效 */
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+	/* 提升视觉效果 */
+}
+
+.selected_wrapper {
+	height: 40px;
+	width: 200px;
+	/* 使内容在内部居中 */
+	align-items: center;
+	/* 垂直居中 */
+	padding: 5px 10px;
+	/* 内边距确保内容不紧贴 */
+	border-radius: 12px;
+	/* 圆角裁切 */
+	background-image: url(/static/model_select/select_info_box.png);
+	/* 背景图片 */
+	background-repeat: no-repeat;
+	background-position: center;
+	/* 适配容器 */
+	overflow: hidden;
+	/* 确保背景圆角裁切生效 */
+}
+
+.selected {
+	font-size: 20px;
+	/* 调整字体大小 */
+	color: #333;
+	/* 字体颜色 */
+	text-align: center;
+	/* 文本左对齐 */
+}
+
+.confirm {
+	width: 90px;
+	/* 按钮宽度 */
+	height: 50px;
+	/* 按钮高度 */
+	border-radius: 8px;
+	/* 按钮圆角 */
+	object-fit: cover;
+	/* 确保图片显示完整 */
+	padding-right: 50px;
+}
+
+/* 遮罩层 */
+.modal-overlay {
+	position: fixed;
+	/* 固定定位，覆盖整个屏幕 */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	/* 半透明黑色背景 */
+	display: flex;
+	/* 使用flex布局来居中弹窗 */
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	/* 确保弹窗在最上层 */
+}
+
+/* 弹窗内容 */
+.modal-content {
+	position: relative;
+	/* 圆角 */
+	padding: 20px;
+	max-width: 90%;
+	/* 控制最大宽度 */
+	max-height: 100vh;
+	/* 控制最大高度，避免超出视口 */
+	overflow: hidden;
+	/* 内容溢出时隐藏 */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+	/* 弹窗阴影 */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}

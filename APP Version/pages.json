@@ -1,0 +1,60 @@
+{
+	"pages": [{
+			"path": "pages/home/home",
+			"style": {
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/history/history"
+		},
+		{
+			"path": "pages/about/about",
+			"style": {
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/new_draw/new_draw",
+			"style": {
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/model_select/model_select"
+		},
+		{
+			"path": "pages/watch_data/watch_data",
+			"style": {
+				"disableScroll": true
+			}
+		}
+
+	],
+	"globalStyle": {
+		"navigationStyle": "custom",
+		"backgroundColor": "#ffffff",
+		"app-plus": {
+			"background": "#efeff4"
+		}
+	},
+	"tabBar": {
+		"custom": true,
+		"list": [{
+				"pagePath": "pages/home/home"
+			},
+			{
+				"pagePath": "pages/about/about"
+			}
+		]
+
+		// "height": "50px",
+		// "borderStyle": "#f5f5f5",
+		// "backgroundColor": "white",
+		// "selectedColor": "#2979ff",
+		// "color": "#ccc",
+
+		// ],
+		// "custom": true
+	}
+}

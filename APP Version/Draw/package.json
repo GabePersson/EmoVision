@@ -1,0 +1,16 @@
+{
+    "id": "xiaogang-canvas",
+    "name": "canvas画板工具",
+    "displayName": "canvas画板工具",
+    "version": "0.1.4",
+    "description": "canvas画板工具，支持曲线、直线、画圆、方形、清空、撤回、橡皮擦、画笔颜色、画笔粗细、下载、分享等操作，支持横竖屏",
+    "keywords": [
+        "uni_modules、画板、canvas、签名、电子签名、简约风、万能、免费、支持横竖屏"
+    ],
+    "dcloudext": {
+        "category": [
+            "uni-app前端模板",
+            "uni-app前端项目模板"
+        ]
+    }
+}

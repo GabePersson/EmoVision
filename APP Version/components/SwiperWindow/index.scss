@@ -1,0 +1,29 @@
+/* 滑窗 */
+	.image-carousel {
+		width: 95%;
+		height: 15vh;
+		margin: 0 auto;
+		padding-left: 7px;
+		border-radius: 10px;
+		/* 圆角调整为10px，更贴合柔和设计 */
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+		/* 添加阴影使轮播看起来更立体 */
+		background-color: #f5f5f5;
+		/* 背景色，避免过于单调 */
+	}
+
+	.swiper-container {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		/* 确保子元素位置基于父容器 */
+	}
+
+	.swiper-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		/* 确保图片比例不变，适配容器 */
+		border-radius: 10px;
+		/* 图片圆角保持一致 */
+	}

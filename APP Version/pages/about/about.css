@@ -1,0 +1,106 @@
+	.container {
+		padding-top: 100px;
+		font-size: 14px;
+		line-height: 24px;
+		display: flex;
+		flex-direction: column;
+		height: calc(86vh);
+		overflow: hidden;
+		align-items: center;
+	}
+
+	.main-container {
+		width: 100%;
+		flex-grow: 1;
+		background-color: white;
+		border-radius: 20px 20px 0 0;
+		padding: 15px 20px;
+		box-sizing: border-box;
+		margin-top: 30px;
+		z-index: 10;
+		padding-left: 5px;
+		align-items: center;
+		padding-top: 50px;
+	}
+
+	.avatar_container {
+		position: fixed;
+		align-items: center;
+		background-image: url('@/static/about/avatar_background.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+		z-index: 11;
+		height: 100px;
+		width: 100px;
+		left: 50px;
+		top: 70px;
+	}
+
+	.info_container {
+		position: fixed;
+		align-items: center;
+		justify-content: center;
+		z-index: 11;
+		left: 160px;
+		top: 80px;
+	}
+
+	.username {
+		font-family: Arial, sans-serif;
+	}
+
+	.id {
+		font-family: Arial, sans-serif;
+	}
+
+	.setting {
+		position: fixed;
+		z-index: 10;
+		width: 60px;
+		height: 80px;
+		top: 5px;
+		right: 5px;
+	}
+
+	.scan {
+		position: fixed;
+		z-index: 10;
+		width: 30px;
+		height: 30px;
+		right: 25px;
+		top: 70px;
+	}
+
+
+	.page-item {
+
+		width: 90%;
+		display: flex;
+		align-items: center;
+		background-color: #ffffff;
+		border-radius: 10px;
+		padding: 10px;
+		margin-bottom: 10px;
+		background-image: url('@/static/about/item_background.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100% auto;
+		padding: 20px;
+		/* 加入合适的内边距来保证图片显示 */
+		margin-bottom: 10px;
+	}
+
+	.page-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 5px;
+		margin-right: 10px;
+		background-color: #ffffff;
+	}
+
+	.page-name {
+		font-size: 16px;
+		color: #333;
+		font-weight: bold;
+	}

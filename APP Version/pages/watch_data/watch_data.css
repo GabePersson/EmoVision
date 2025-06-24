@@ -1,0 +1,82 @@
+	/* 基础样式，确保页面适配各种设备 */
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		font-family: "Helvetica Neue", Arial, sans-serif;
+		overflow: hidden;
+		/* 防止页面有滚动条 */
+	}
+
+	/* 顶部按钮区域样式 */
+	.header {
+		height: 60px;
+		/* 顶部按钮区域的高度 */
+		background-color: #f8f8f8;
+		display: flex;
+		justify-content: flex-end;
+		/* 按钮右对齐 */
+		align-items: center;
+		padding: 0 15px;
+		box-sizing: border-box;
+		position: relative;
+	}
+
+	/* 微信风格的跳过按钮 */
+	.skip-button {
+		padding: 8px 20px;
+		background: linear-gradient(145deg, #1aad19, #0d8d13);
+		/* 添加渐变效果 */
+		color: white;
+		font-size: 16px;
+		font-weight: bold;
+		border: none;
+		border-radius: 20px;
+		/* 圆角 */
+		cursor: pointer;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+		/* 更柔和的阴影 */
+		transition: all 0.3s ease;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+	/* 按钮悬浮效果 */
+	.skip-button:hover {
+		background: linear-gradient(145deg, #139c11, #0b7f0d);
+		/* 悬浮时改变渐变色 */
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.2);
+		/* 更强的阴影效果 */
+		transform: translateY(-2px);
+	}
+
+	iframe {
+		width: 100%;
+		height: 100vh;
+		/* 设置为全屏高度 */
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+
+
+
+	/* 适配移动设备，保证网页响应式 */
+	@media (max-width: 768px) {
+
+		/* 调整按钮大小 */
+		.skip-button {
+			padding: 8px 15px;
+			/* 减小按钮的宽度 */
+			font-size: 14px;
+			/* 调整字体大小 */
+		}
+
+		/* 适配更小屏幕 */
+		iframe {
+			height: calc(100vh);
+			/* 适应手机屏幕 */
+		}
+	}

@@ -1,0 +1,24 @@
+	/* 	body,
+	html {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		font-family: "Helvetica Neue", Arial, sans-serif;
+		overflow: hidden;
+		/* 防止页面有滚动条 */
+	/* 	} */
+
+	page {
+		width: 100%;
+		height: 100%;
+	}
+
+	.box {
+		width: 100%;
+		height: 100%;
+	}
+
+	/* 禁用整个页面的上下滚动 */
+	.uni-page-wrapper {
+		overflow: hidden;
+	}

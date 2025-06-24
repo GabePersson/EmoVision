@@ -1,0 +1,157 @@
+	.container {
+		padding-top: 100px;
+		font-size: 14px;
+		line-height: 24px;
+		display: flex;
+		flex-direction: column;
+		height: calc(86vh);
+		overflow: hidden;
+		align-items: center;
+	}
+
+	.main-container {
+		width: 100%;
+		flex-grow: 1;
+		background-color: white;
+		border-radius: 20px 20px 0 0;
+		padding: 15px 20px;
+		box-sizing: border-box;
+		margin-top: -20px;
+		z-index: 10;
+		padding-left: 5px;
+		align-items: center;
+		background-image: url('@/static/home/BackGround.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+	}
+
+	.search-container {
+		width: 100%;
+	}
+
+	.history-title {
+		height: 25px;
+		/* 设置宽度 */
+		width: 79px;
+		margin: 15px;
+		object-fit: contain;
+	}
+
+	.history-list {
+		flex-grow: 1;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.history-item {
+
+		width: 90%;
+		display: flex;
+		align-items: center;
+		background-color: #ffffff;
+		border-radius: 10px;
+		padding: 10px;
+		margin-bottom: 10px;
+		background-image: url('@/static/home/history_info_box.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100% auto;
+		padding: 20px;
+		/* 加入合适的内边距来保证图片显示 */
+		margin-bottom: 10px;
+		/* 适当的底部间距 */
+		/* 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+	}
+
+	.history-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 5px;
+		margin-right: 10px;
+		background-color: #f0f0f0;
+	}
+
+	.history-info {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+	}
+
+	.history-name {
+		font-size: 16px;
+		color: #333;
+		font-weight: bold;
+	}
+
+	.history-time {
+		font-size: 12px;
+		color: #8f939c;
+	}
+
+	.checkbox {
+		width: 20px;
+		height: 20px;
+		border: 2px;
+		border-radius: 3px;
+	}
+
+	.controller_container {
+		position: fixed;
+		top: 10px;
+		right: 50px;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		display: flex;
+		gap: 20px;
+	}
+
+	.remove_container {
+		background-image: url("/static/home/remove_edge.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100% auto;
+		height: 60px;
+		width: 30px;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		display: flex;
+
+	}
+
+	.top_container {
+		background-image: url("/static/home/top_edge.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+		height: 60px;
+		width: 30px;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		display: flex;
+
+	}
+
+	.top_icon {
+		height: 30px;
+		width: 30px;
+
+	}
+
+	.remove_icon {
+		height: 30px;
+		width: 30px;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.display {
+		display: flex;
+	}

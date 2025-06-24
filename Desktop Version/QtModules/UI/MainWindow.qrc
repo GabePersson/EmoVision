@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="act_normal">
+    <file>../../Srcs/icon/editColor.png</file>
+    <file>../../Srcs/icon/Icon.png</file>
+  </qresource>
+</RCC>
