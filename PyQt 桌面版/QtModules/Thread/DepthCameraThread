@@ -1,0 +1,82 @@
+import pyrealsense2 as rs
+import numpy as np
+import socket
+from PyQt5.QtCore import QThread
+from PyQt5.QtGui import QImage
+import cv2
+
+# TODO: 修改为本地API地址
+SERVER_IP = 'localhost'
+
+class DepthCameraThread(QThread):
+    def __init__(self, parent=None):
+        super(DepthCameraThread, self).__init__(parent)
+        self.pipeline = None
+        self.running = False
+        self.img = QImage()
+        self.server_address = (SERVER_IP, 8002)  # 替换为服务器IP和端口
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+    def checkCamera(self):
+        # 检测是否有连接的 RealSense 设备
+        context = rs.context()
+        if len(context.devices) > 0:
+            return True
+        else:
+            return False
+
+    def run(self):
+        # 创建并配置pipeline
+        self.pipeline = rs.pipeline()
+        config = rs.config()
+        config.enable_stream(rs.stream.color, 1280, 720, rs.format.bgr8, 30)
+        config.enable_stream(rs.stream.depth, 848, 480, rs.format.z16, 30)
+
+        # 启动pipeline
+        profile = self.pipeline.start(config)
+
+        # 创建对齐对象（用于对齐彩色和深度帧）
+        align_to = rs.stream.color
+        align = rs.align(align_to)
+
+        self.running = True
+        while self.running:
+            try:
+                frames = self.pipeline.wait_for_frames()
+
+                # 对齐深度帧到彩色帧
+                aligned_frames = align.process(frames)
+                color_frame = aligned_frames.get_color_frame()
+
+                if color_frame:
+                    # 将彩色帧转换为numpy数组
+                    color_image = np.asanyarray(color_frame.get_data())
+
+                    # 转换为QImage
+                    height, width, channel = color_image.shape
+                    bytes_per_line = 3 * width
+                    self.img = QImage(color_image.data, width, height, bytes_per_line, QImage.Format_RGB888).rgbSwapped()
+
+                    # 缩小图像尺寸到640x480
+                    resized_image = cv2.resize(color_image, (640, 480))
+
+                    # 编码帧为JPEG格式
+                    _, img_encoded = cv2.imencode('.jpg', resized_image)
+
+                    # 发送帧数据到服务器（通过UDP）
+                    try:
+                        self.sock.sendto(img_encoded.tobytes(), self.server_address)
+                    except Exception as e:
+                        print(f"Error sending data: {e}")
+
+            except Exception as e:
+                print(e)
+
+            self.msleep(200)  # 控制帧率
+
+    def stop(self):
+        self.running = False
+        self.msleep(400)
+        if self.pipeline is not None:
+            self.pipeline.stop()
+        self.sock.close()  # 关闭UDP socket

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>752</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>EmoVision</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="MainWindow.qrc">
+    <normaloff>:/act_normal/Srcs/icon/Icon.png</normaloff>:/act_normal/Srcs/icon/Icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 主窗口背景颜色和字体 */
+QMainWindow {
+    background-color: #f4f6f9;
+    color: #2e3d49;
+    font-family: &quot;Arial&quot;, sans-serif;
+    font-size: 14px;
+}
+
+/* 标题栏 */
+QLabel#titleLabel {
+    color: #34495e;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* 按钮样式 */
+QPushButton {
+    background-color: #3498db;
+	height:16px;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton:pressed {
+    background-color: #1e6091;
+}
+
+/* LineEdit 样式 */
+QLineEdit {
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+QLineEdit:focus {
+    border-color: #3498db;
+}
+
+/* GroupBox 样式 */
+QGroupBox {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 5px;
+    background-color: transparent;
+    color: #2e3d49;
+}
+
+/* 滑块样式 */
+QSlider::groove:horizontal {
+    height: 6px;
+    background: #bdc3c7;
+    border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+    background: #3498db;
+    border: 1px solid #2980b9;
+    width: 14px;
+    height: 14px;
+    margin: -5px 0;
+    border-radius: 7px;
+}
+
+/* 下拉框样式 */
+QComboBox {
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid #bdc3c7;
+    selection-background-color: #3498db;
+    selection-color: white;
+}
+
+QSpinBox{
+	border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical {
+    width: 10px;
+    background: #ecf0f1;
+    margin: 0px 3px 0px 3px;
+}
+
+QScrollBar::handle:vertical {
+    background: #3498db;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="5">
+          <spacer name="horizontalSpacer_10">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>1000</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="3">
+          <widget class="QSpinBox" name="sbox_size">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>40</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="7">
+          <widget class="QPushButton" name="btn_endDrawing">
+           <property name="text">
+            <string>结束绘画</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QComboBox" name="cbox_penType">
+           <item>
+            <property name="text">
+             <string>笔</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>直线</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>矩形</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>椭圆</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="6">
+          <widget class="QPushButton" name="btn_clear">
+           <property name="text">
+            <string>清空画布</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="btn_back">
+           <property name="text">
+            <string>回退</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="btn_editColor">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>编辑颜色</string>
+           </property>
+           <property name="icon">
+            <iconset resource="MainWindow.qrc">
+             <normaloff>:/act_normal/Srcs/icon/editColor.png</normaloff>:/act_normal/Srcs/icon/editColor.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGraphicsView" name="graphicsView">
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid #8f8f91;
+border-radius: 25px;  /* 圆角半径 */
+background-color: white;
+
+</string>
+        </property>
+        <property name="renderHints">
+         <set>QPainter::TextAntialiasing</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget_2" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>参考图像</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_refImg">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>274</width>
+                <height>250</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">border: 2px solid #8f8f91;
+border-radius: 15px;  /* 圆角半径 */
+
+</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="text">
+               <string>目前还未生成图像，快生成一个吧</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+           <property name="leftMargin">
+            <number>20</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>20</number>
+           </property>
+           <item row="0" column="0" colspan="2">
+            <widget class="QPushButton" name="btn_voice">
+             <property name="text">
+              <string>语音识别</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="ledit_prompt">
+             <property name="styleSheet">
+              <string notr="true">        border: 2px solid #8f8f91;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #f0f0f0;
+        color: #333;
+        font-size: 14px;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="btn_genImg">
+             <property name="text">
+              <string>生成图像</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="2">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="0">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="btn_saveRefImg">
+           <property name="text">
+            <string>保存参考图像</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="btn_saveDraw">
+           <property name="text">
+            <string>保存绘画</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <property name="leftMargin">
+          <number>20</number>
+         </property>
+         <item row="2" column="0">
+          <widget class="QRadioButton" name="rbtn_selfDrawAnalyse">
+           <property name="text">
+            <string>个人绘画情感分析</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="ckbox_camera">
+           <property name="text">
+            <string>启用摄像头</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="ckbox_music">
+           <property name="text">
+            <string>开启音乐</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QRadioButton" name="rbtn_refImgAnalyse">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>参考图像情感分析</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoRepeat">
+            <bool>false</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources>
+  <include location="MainWindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>
