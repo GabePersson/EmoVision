@@ -42,10 +42,7 @@ EmoVision的系统整体架构如图2所示，主要包括评估、疗愈、检�
 
 **项目界面功能展示：**
 
-<center>
-    <iframe height="400" width="600" src="//player.bilibili.com/player.html?bvid=BV1LV25YWE7y" poster="https://ai-studio-static-online.cdn.bcebos.com/ed1bf1979e4b412886a7aad4c99bd25eccfa4c907b674164b359b4ed014d6d9e" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
-    </iframe>
-</center>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113283184990802&bvid=BV1LV25YWE7y&cid=26230326619&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 ## 相关链接
 #### **EmoVision项目介绍:【C4AI-2024】EmoVision：基于多模态情绪调节的艺术疗愈平台（https://aistudio.baidu.com/projectdetail/8376625 ）**
