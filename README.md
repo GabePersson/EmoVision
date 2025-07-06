@@ -55,3 +55,7 @@ EmoVision的系统整体架构如图2所示，主要包括评估、疗愈、检�
 
 ## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=GabePersson/EmoVision&type=Date)](https://www.star-history.com/#GabePersson/EmoVision&Date)
+
+## Acknowledgement
+https://github/com/nicolaus-huang/ProcessPainter
+Thanks for above author's contribution.
