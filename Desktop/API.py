@@ -131,16 +131,16 @@ def sumEmo():
                 break
             else:
                 comprehensiveData['data'][idx] = {
-                    key: data[key]*0.8+theFaceData[key]*0.2 for key in data.keys()
+                    key: data[key] * 0.8 + theFaceData[key] * 0.2 for key in data.keys()
                 }
         else:
             if theFaceData is None:
                 comprehensiveData['data'][idx] = {
-                    key: data[key]*0.5+theTextData[key]*0.5 for key in data.keys()
+                    key: data[key] * 0.5 + theTextData[key] * 0.5 for key in data.keys()
                 }
             else:
                 comprehensiveData['data'][idx] = {
-                    key: data[key]*0.4+theFaceData[key]*0.2+theTextData[key]*0.4 for key in data.keys()
+                    key: data[key] * 0.4 + theFaceData[key] * 0.2 + theTextData[key] * 0.4 for key in data.keys()
                 }
 
 
@@ -162,22 +162,24 @@ async def clear():
     global faceData
     global drawData
     global textData
-    
+
     faceData = deepcopy(originData)
     drawData = deepcopy(originData)
     textData = deepcopy(originData)
     comprehensiveData = deepcopy(originData)
 
+
 @app.get('/music')
 async def getMusic():
     sumEmo()
     emoRatio = comprehensiveData['data'][-1]
-    sorted_data = sorted(emoRatio.items(),key=lambda x:x[1], reverse=True)
+    sorted_data = sorted(emoRatio.items(), key=lambda x: x[1], reverse=True)
     bigEmoRation = sorted_data[:2]
-    if bigEmoRation[0][1]>=0.5 or bigEmoRation[0][1]>=3*bigEmoRation[1][1]:
+    if bigEmoRation[0][1] >= 0.5 or bigEmoRation[0][1] >= 3 * bigEmoRation[1][1]:
         return bigEmoRation[0][0]
     else:
-        return bigEmoRation[0][0]+bigEmoRation[1][0]
+        return bigEmoRation[0][0] + bigEmoRation[1][0]
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8001)
