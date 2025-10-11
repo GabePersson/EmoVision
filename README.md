@@ -53,8 +53,6 @@ EmoVision的系统整体架构如图2所示，主要包括评估、疗愈、检�
 #### **GitHub仓库地址：EmoVision-PyQt（https://github.com/GabePersson/EmoVision-PyQt ）**
 #### **GitHub仓库地址：EmoVision-uniapp（https://github.com/GabePersson/EmoVision-uniapp ）**
 
-## Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=GabePersson/EmoVision&type=Date)](https://www.star-history.com/#GabePersson/EmoVision&Date)
 
 ## Acknowledgement
 [ProcessPainter](https://github.com/nicolaus-huang/ProcessPainter)
